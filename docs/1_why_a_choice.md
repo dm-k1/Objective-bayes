@@ -11,9 +11,9 @@ shows, analytically and by simulation, how each lines up with that behaviour.
 Section 4 says what is left for the validation to decide.
 
 The correlation-matrix figures come from the motivating simulation
-([`R/docs/motivating_simulation.R`](../R/docs/motivating_simulation.R)); the
+([`R/motivating_simulation.R`](../R/motivating_simulation.R)); the
 figure of section 1 and the drift figure of section 3 are made by
-[`R/docs/make_figures.R`](../R/docs/make_figures.R).
+[`R/make_figures.R`](../R/make_figures.R).
 
 ---
 
@@ -126,7 +126,7 @@ each of which is the flat correlation of section 1 when $k = 1$:
 | **flat R-squared** | $R^2$ | Beta(1, 1) | flat on $r^2$, not on $r$ |
 
 All three spread the total over the predictors in the same way, with every
-split equally likely ([`2_the_three_priors.md`](2_the_three_priors.md)); they
+split equally likely ([`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md)); they
 differ only in the distribution of the total.
 
 **Flat partial r is what random correlation matrices give.** Under "every
@@ -222,12 +222,12 @@ come first, for each of the three: does it work correctly as a Bayesian prior
 correctly, and it behaves the way a default prior should), and how does it
 behave as a test as predictors are added? The
 validation answers the first for all three, in the same way for each
-([`validation.ipynb`](../validation.ipynb); what each study tests is in
-[`validation_tests.md`](validation_tests.md)); the second is a later study. Under flat R
+([`validation.ipynb`](https://github.com/dm-k1/flatcor-validation/blob/main/validation.ipynb); what each study tests is in
+[`validation_tests.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/validation_tests.md)); the second is a later study. Under flat R
 and flat R-squared, one consequence of section 3 is already predictable: a
 prior that narrows each partial correlation as $k$ grows expects each
 coefficient to be a smaller part of the total, so its test of one coefficient
 changes with the number of other predictors in the model.
 
-The next document, [`2_the_three_priors.md`](2_the_three_priors.md),
+The next document, [`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md),
 describes the three priors as one family and what each expects.

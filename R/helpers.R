@@ -1,8 +1,8 @@
 ## =====================================================================
-##  Helpers of the scripts behind the docs (R/docs/motivating_simulation.R):
+##  Helpers of the scripts behind the docs (R/motivating_simulation.R):
 ##  parallel work with an independent random stream per item, saving figures,
 ##  and the simulation's own pass/fail checks (M0 to M4). Not part of the
-##  validation, which runs as a pipeline (_targets.R).
+##  validation (dm-k1/flatcor-validation).
 ## =====================================================================
 
 ## ---- Text encoding ------------------------------------------------------------------

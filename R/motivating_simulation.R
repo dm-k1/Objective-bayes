@@ -7,7 +7,7 @@
 ##  prior: it draws correlation matrices of (y, x1 ... xk) with every valid
 ##  matrix equally likely, and looks at what k does. Only then does it show
 ##  the three intuitive ways of deciding what should stay flat, which are the
-##  three priors the validation (studies/) compares. It explains the
+##  three priors the validation (dm-k1/flatcor-validation) compares. It explains the
 ##  project and validates nothing, so it lives here with the code behind the
 ##  docs.
 ##
@@ -38,13 +38,13 @@
 ##    M3. R^2 is Beta(k/2, 1)
 ##    M4. R is flat in the "R flat" version, R^2 in the "R-squared flat" one
 ##
-##  Run from the project folder: Rscript R/docs/motivating_simulation.R
+##  Run from the project folder: Rscript R/motivating_simulation.R
 ##  About 8 minutes on 8 cores; no Stan needed. Writes its figures and its
 ##  table to docs/figures/ (motivation_*.png, motivation_table.md).
 ## =====================================================================
 library(ggplot2)
 library(patchwork)
-source("R/docs/helpers.R") # parallel_map(), save_figure(), record_check()
+source("R/helpers.R") # parallel_map(), save_figure(), record_check()
 figures_folder <- file.path("docs", "figures") # save_figure() writes here
 
 set.seed(2026)

@@ -12,14 +12,14 @@ Zellner *g*-priors) and sit next to rstanarm's `stan_lm`:
 
 Keeping the implied $R^2$ constant in $k$ does not by itself single out flat
 R: $R^2 \sim$ Beta(½, $b$) is a *g*-mixture for every $k$ and every $b$
-([appendix A](A_derivations.md), section 8). Where the
+([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 8). Where the
 three priors come from is described in
 [`1_why_a_choice.md`](../1_why_a_choice.md), sections 2 and 3 (the motivating simulation).
 
 Checks are named by the study of the validation they belong to (3b.5 is
-study 3b, item 5; [`validation_tests.md`](../validation_tests.md) gives each study's design),
+study 3b, item 5; [`validation_tests.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/validation_tests.md) gives each study's design),
 or by their name in the motivating simulation (M0 to M4,
-[`R/docs/motivating_simulation.R`](../../R/docs/motivating_simulation.R)).
+[`R/motivating_simulation.R`](../../R/motivating_simulation.R)).
 Places marked **TO REFRESH** are to be filled in from the full run.
 
 ## The family: mixtures of *g*-priors
@@ -31,7 +31,7 @@ $W \sim$ Inverse-Gamma(1, ½) and $B \sim$ Beta($a$, $k/2 - a$). This gives
 Beta(½, $(k-1)/2$) for flat R, Beta(1, $k/2 - 1$) for flat R-squared
 ($k \ge 3$; at $k = 2$ it equals flat partial r, and at $k = 1$ it is not a
 *g*-mixture) and $B \equiv 1$ for flat partial r
-([appendix A](A_derivations.md), section 8). The table in
+([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 8). The table in
 that section shows how much $R^2$ each member expects before any data as $k$
 grows: from a median of .25 at every $k$ (flat R) and .50 at every $k$ (flat
 R-squared) to .98 at $k = 30$ (Zellner–Siow).
@@ -97,7 +97,7 @@ motivating simulation), and they differ in one claim:
   is the subject of the subsection "Why η = 1" below. In this package the
   prior is `prior = "flat_partial_r"` in every function.
 - **Consistency between model sizes forces the same growth.** As a
-  *g*-mixture (section 8 of [appendix A](A_derivations.md))
+  *g*-mixture (section 8 of [appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md))
   flat partial r has $B \equiv 1$: a fixed hyperprior $g/n \sim$
   Inverse-Gamma(1, ½), so the prior is the same scale mixture of normals for
   every $k$, and models of different sizes agree with each other. Flat R gives
@@ -114,7 +114,7 @@ motivating simulation), and they differ in one claim:
   dimension plus one), keeps every single correlation flat for any $k$; that
   is their result. We found no source for the further fact that it implies
   the same $R^2 \sim$ Beta($k/2$, 1); it is checked by simulation in
-  `R/docs/make_figures.R` (KS = .0025, .0027 and .0038 for $k$ = 1, 3
+  `R/make_figures.R` (KS = .0025, .0027 and .0038 for $k$ = 1, 3
   and 8, with 40,000 draws each). Flat correlations in either sense therefore
   give $a = k/2$, and only a flat total gives flat R.
 
@@ -166,11 +166,11 @@ numbers, and the formula without the simulation could hide a slip. The
 literal reading "every single correlation flat" was checked in the same way,
 with the correlations of an inverse-Wishart with $k + 2$ degrees of freedom
 (Barnard et al., 2000), and gives the same Beta($k/2$, 1) by simulation
-(`R/docs/make_figures.R`).
+(`R/make_figures.R`).
 
 This is the $R^2$ prior of flat partial r. The share per predictor,
 Beta(½, $(k-1)/2$) for every member of the family, is a separate result found
-in the same way ([`2_the_three_priors.md`](../2_the_three_priors.md), "The share per predictor").
+in the same way ([`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md), "The share per predictor").
 
 ### Why η = 1
 
@@ -182,7 +182,7 @@ Jeffreys' flat correlation, whatever the number of other predictors.
 | 1 | Under LKJ(η), the partial correlation of $y$ with one predictor given all the others is Beta(η, η) on (−1, 1), **for every $k$**. Flat only at η = 1 | yes | the motivating simulation, check M2 (η = 1); the KS distances below |
 | 2 | At $k = 1$ the prior is Jeffreys' flat correlation | yes (LKJ(η) at $k = 1$ is Beta(η, η) on $r$) | the same, $k = 1$ |
 | 3 | As a g-mixture, one hyperprior for every $k$: $g/n \sim$ Inverse-Gamma(1, ½), so models of every size share one scale | no (every η gives a fixed hyperprior) | appendix A, section 8 |
-| 4 | "Every single correlation flat" (Barnard et al., 2000) leads to the same $R^2 \sim$ Beta($k/2$, 1) | — | simulation (`R/docs/make_figures.R`); no source found for the $R^2$ part |
+| 4 | "Every single correlation flat" (Barnard et al., 2000) leads to the same $R^2 \sim$ Beta($k/2$, 1) | — | simulation (`R/make_figures.R`); no source found for the $R^2$ part |
 
 Point 1 is what matters for one coefficient. Under η = 1 every
 coefficient's prior, as a partial correlation, is Jeffreys' flat
@@ -231,7 +231,7 @@ Priors with one scale shared by all coefficients (Zellner–Siow, hyper-*g*,
 and all three priors here) let large coefficients push the test of a small
 one towards "no effect" (Som, Hans & MacEachern, 2016): the test of a term,
 the models with and without it, depends on what the other predictors explain
-([appendix A](A_derivations.md), section 10). Their remedy, block hyper-*g*
+([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 10). Their remedy, block hyper-*g*
 priors, gives groups of coefficients their own scale. How much this matters
 for the three priors in practice is for the later study of how they behave
 in use.
@@ -273,7 +273,7 @@ is the different prior described above. A custom brms prior can state the
 flat R density, but brms samples the coefficients directly and misses the
 prior's peak at zero for larger $k$. For that reason `fit_regression()` uses
 its own Stan model, sampled in $R$ and a direction
-([appendix A](A_derivations.md), section 6).
+([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 6).
 
 The one-predictor table can be reproduced with:
 
@@ -356,7 +356,7 @@ The following points were not found in the literature searched:
   moves the threshold and not the ranking) went with that test in flatcor
   2.0.0; they are in the git history (commit 9ffd1bf).
 
-The ranked list of what to read is in [the reading list](../working/reading_list.md).
+The ranked list of what to read is in [the reading list](../reading_list.md).
 
 The review of objective priors by Consonni, Fouskakis, Liseo and Ntzoufras
 (2018) has been read (its model-comparison part, sections 3.1 to 3.6). It
