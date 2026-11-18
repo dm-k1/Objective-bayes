@@ -1,7 +1,7 @@
 ## =====================================================================
 ##  Figures 1 and 2 of docs/1_why_a_choice.md, and the checks printed for it
 ##  and for appendix B (figures 3-6, for the three priors and the
-##  derivations, are made in flatcor-validation)
+##  derivations, are made by R/make_figures_from_validation.R)
 ##  Every figure is a simulation compared with a formula, so each claim in
 ##  the docs can be checked by running this file. The three priors keep the
 ##  colours of the motivating simulation: flat partial r blue, flat R orange, flat

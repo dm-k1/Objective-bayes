@@ -126,7 +126,7 @@ each of which is the flat correlation of section 1 when $k = 1$:
 | **flat R-squared** | $R^2$ | Beta(1, 1) | flat on $r^2$, not on $r$ |
 
 All three spread the total over the predictors in the same way, with every
-split equally likely ([`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md)); they
+split equally likely ([`2_the_three_priors.md`](2_the_three_priors.md)); they
 differ only in the distribution of the total.
 
 **Flat partial r is what random correlation matrices give.** Under "every
@@ -229,5 +229,5 @@ prior that narrows each partial correlation as $k$ grows expects each
 coefficient to be a smaller part of the total, so its test of one coefficient
 changes with the number of other predictors in the model.
 
-The next document, [`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md),
+The next document, [`2_the_three_priors.md`](2_the_three_priors.md),
 describes the three priors as one family and what each expects.

@@ -30,8 +30,8 @@ partial correlation narrows as $k$ grows).
 
 | Repository | What it holds |
 |---|---|
-| **Objective-bayes** (this one) | the argument and the paper: the introduction, the relation to other priors, the reading list, the motivating simulation |
-| [**flatcor-validation**](https://github.com/dm-k1/flatcor-validation) | the statistics: the three priors and their derivations (the methods), and the validation that each works correctly within the Bayesian framework |
+| **Objective-bayes** (this one) | the argument and the paper: the introduction, the three priors and their derivations, the relation to other priors, the reading list, the motivating simulation |
+| [**flatcor-validation**](https://github.com/dm-k1/flatcor-validation) | the validation: six studies of whether each prior works correctly within the Bayesian framework |
 | [**flatcor**](https://github.com/dm-k1/flatcor) | the R package |
 
 ## Reading order
@@ -39,9 +39,9 @@ partial correlation narrows as $k$ grows).
 | | Document | Where | What it is |
 |---|---|---|---|
 | 1 | [`docs/1_why_a_choice.md`](docs/1_why_a_choice.md) | here | **Why a choice is needed**: what adding predictors does to valid correlation matrices, and the three intuitive choices of what stays flat |
-| 2 | [`docs/2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md) | flatcor-validation | **The three priors**: the family $R^2 \sim$ Beta($a$, 1), what each keeps flat and expects, what the package computes |
+| 2 | [`docs/2_the_three_priors.md`](docs/2_the_three_priors.md) | here | **The three priors**: the family $R^2 \sim$ Beta($a$, 1), what each keeps flat and expects, what the package computes |
 | 3 | [the validation](https://github.com/dm-k1/flatcor-validation) | flatcor-validation | **Does each prior work?** Six studies, and what each tests |
-| A | [`docs/appendix/A_derivations.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md) | flatcor-validation | The derivations: the density, the Stan model, the Bayes factors, the default-prior criteria |
+| A | [`docs/appendix/A_derivations.md`](docs/appendix/A_derivations.md) | here | The derivations: the density, the Stan model, the Bayes factors, the default-prior criteria |
 | B | [`docs/appendix/B_relation_to_other_priors.md`](docs/appendix/B_relation_to_other_priors.md) | here | How the three relate to JZS, `stan_lm`, R2-D2 and other priors; what is new here and what is not |
 | | [`docs/reading_list.md`](docs/reading_list.md) | here | What to read, and why |
 | | the paper | here, **to be written** | The results of the validation and the recommendation |
@@ -68,6 +68,7 @@ partial correlation narrows as $k$ grows).
 | `docs/figures/` | The figures of part 1 |
 | `R/motivating_simulation.R`, `R/helpers.R` | The motivating simulation (random correlation matrices; no Stan needed) |
 | `R/make_figures.R` | Figures 1 and 2 of part 1, and the checks printed for part 1 and appendix B |
+| `R/make_figures_from_validation.R` | Figures 3-6 of part 2 and appendix A, and their checks (temporary name, to be merged with `make_figures.R`) |
 
 Both scripts need [flatcor](https://github.com/dm-k1/flatcor)
 (`remotes::install_github("dm-k1/flatcor")`) and ggplot2, patchwork; run them
@@ -78,7 +79,8 @@ from this folder (`Rscript R/motivating_simulation.R`).
 These files come from the repository that is now
 [flatcor-validation](https://github.com/dm-k1/flatcor-validation), with their
 git history: the argument and the validation grew up together there until
-November 2026, when the paper side moved here.
+November 2026, when the paper side moved here. Part 2 (the three priors),
+appendix A and their figures followed on 18 November 2026.
 
 ## Author
 

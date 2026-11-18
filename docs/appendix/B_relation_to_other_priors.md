@@ -12,7 +12,7 @@ Zellner *g*-priors) and sit next to rstanarm's `stan_lm`:
 
 Keeping the implied $R^2$ constant in $k$ does not by itself single out flat
 R: $R^2 \sim$ Beta(½, $b$) is a *g*-mixture for every $k$ and every $b$
-([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 8). Where the
+([appendix A](A_derivations.md), section 8). Where the
 three priors come from is described in
 [`1_why_a_choice.md`](../1_why_a_choice.md), sections 2 and 3 (the motivating simulation).
 
@@ -31,7 +31,7 @@ $W \sim$ Inverse-Gamma(1, ½) and $B \sim$ Beta($a$, $k/2 - a$). This gives
 Beta(½, $(k-1)/2$) for flat R, Beta(1, $k/2 - 1$) for flat R-squared
 ($k \ge 3$; at $k = 2$ it equals flat partial r, and at $k = 1$ it is not a
 *g*-mixture) and $B \equiv 1$ for flat partial r
-([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 8). The table in
+([appendix A](A_derivations.md), section 8). The table in
 that section shows how much $R^2$ each member expects before any data as $k$
 grows: from a median of .25 at every $k$ (flat R) and .50 at every $k$ (flat
 R-squared) to .98 at $k = 30$ (Zellner–Siow).
@@ -97,7 +97,7 @@ motivating simulation), and they differ in one claim:
   is the subject of the subsection "Why η = 1" below. In this package the
   prior is `prior = "flat_partial_r"` in every function.
 - **Consistency between model sizes forces the same growth.** As a
-  *g*-mixture (section 8 of [appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md))
+  *g*-mixture (section 8 of [appendix A](A_derivations.md))
   flat partial r has $B \equiv 1$: a fixed hyperprior $g/n \sim$
   Inverse-Gamma(1, ½), so the prior is the same scale mixture of normals for
   every $k$, and models of different sizes agree with each other. Flat R gives
@@ -170,7 +170,7 @@ with the correlations of an inverse-Wishart with $k + 2$ degrees of freedom
 
 This is the $R^2$ prior of flat partial r. The share per predictor,
 Beta(½, $(k-1)/2$) for every member of the family, is a separate result found
-in the same way ([`2_the_three_priors.md`](https://github.com/dm-k1/flatcor-validation/blob/main/docs/2_the_three_priors.md), "The share per predictor").
+in the same way ([`2_the_three_priors.md`](../2_the_three_priors.md), "The share per predictor").
 
 ### Why η = 1
 
@@ -231,7 +231,7 @@ Priors with one scale shared by all coefficients (Zellner–Siow, hyper-*g*,
 and all three priors here) let large coefficients push the test of a small
 one towards "no effect" (Som, Hans & MacEachern, 2016): the test of a term,
 the models with and without it, depends on what the other predictors explain
-([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 10). Their remedy, block hyper-*g*
+([appendix A](A_derivations.md), section 10). Their remedy, block hyper-*g*
 priors, gives groups of coefficients their own scale. How much this matters
 for the three priors in practice is for the later study of how they behave
 in use.
@@ -273,7 +273,7 @@ is the different prior described above. A custom brms prior can state the
 flat R density, but brms samples the coefficients directly and misses the
 prior's peak at zero for larger $k$. For that reason `fit_regression()` uses
 its own Stan model, sampled in $R$ and a direction
-([appendix A](https://github.com/dm-k1/flatcor-validation/blob/main/docs/appendix/A_derivations.md), section 6).
+([appendix A](A_derivations.md), section 6).
 
 The one-predictor table can be reproduced with:
 
