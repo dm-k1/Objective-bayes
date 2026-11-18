@@ -169,6 +169,48 @@ as a Bayesian prior; how the trade-offs play out in use is a later study.
 
 ---
 
+## How the recommendation is decided
+
+The criterion: **a
+default Bayes factor should point clearly towards whatever is true, and
+louder as the data allow it.** When the effect is absent it should say so;
+when the effect is present it should say that; and it should get there at
+the sample sizes researchers actually have, not only as $n \to \infty$.
+
+Three parts of that sentence matter.
+
+- **Both directions at once.** Being loud for the null is easy to get for
+  the wrong reason: a prior that expects very large effects makes almost
+  any dataset look like the null, also when a small real effect is there
+  (the Bartlett–Lindley paradox; Lindley, 1957; Bartlett, 1957). So
+  evidence for a true null counts only next to evidence for a true effect,
+  in the same comparison of priors. A prior that wins one direction by
+  losing the other has not met the criterion.
+- **At realistic sample sizes.** Every prior here is consistent: the
+  evidence for the truth grows without bound as $n$ grows (validation study
+  3b). The criterion asks how fast, and where it starts, at the $n$ and $k$
+  of ordinary studies.
+- **Honest loudness.** A Bayes factor of 10 should mean odds of 10 to 1, or
+  a loud answer is only loud. That is what calibration checks (validation
+  study 3a).
+
+What measures each part:
+
+| Part | Truth | Measured by |
+|---|---|---|
+| loud for a true null | the effect is absent | 3b.3–3b.5 (rates against $\log n$), 3b.8–3b.9 (growing $k$) |
+| loud for a true effect | the effect is present | 3b.6 (a real $x_1$ of 0.15); the later study of how the priors behave in use |
+| both, at realistic $n$ and $k$ | either | the later study: how often a test finds a real effect, confirms a true null, or stays undecided |
+| honest loudness | either | 3a (calibration) |
+
+Most of 3b looks in the null direction: even growing $k$'s "small model"
+rows measure evidence that the extra predictors are null, not that the
+real ones are found. The effect direction rests on 3b.6 for now, which is
+why the study of how the priors behave in use is needed before the
+recommendation is final.
+
+---
+
 ## What the package computes with them
 
 | Question | Function | How it computes | Explained in |
