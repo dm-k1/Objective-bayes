@@ -1,0 +1,12 @@
+[submodule "flatcor"]
+	path = flatcor
+	url = https://github.com/dm-k1/flatcor.git
+	branch = main
+[submodule "flatcor-simulation-studies"]
+	path = flatcor-simulation-studies
+	url = https://github.com/dm-k1/flatcor-simulation-studies.git
+	branch = main
+[submodule "flatcor-paper"]
+	path = flatcor-paper
+	url = https://github.com/dm-k1/flatcor-paper.git
+	branch = main
