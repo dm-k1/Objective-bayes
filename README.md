@@ -17,18 +17,15 @@ more, draw correlation matrices with every valid matrix equally likely and
 watch what the number of predictors $k$ does. One quantity stays flat by
 itself, the **partial correlation** of the outcome with each predictor; the
 marginal correlation narrows, and the explained variance $R^2$ grows
-([`docs/1_why_a_choice.md`](https://github.com/dm-k1/flatcor-paper/blob/main/docs/1_why_a_choice.md)).
+([`docs/1_why_a_choice.md`](https://github.com/dm-k1/flatcor-paper/blob/main/docs/1_why_a_choice.md)):
+
+![What adding predictors does to random correlation matrices](https://raw.githubusercontent.com/dm-k1/flatcor-paper/main/docs/figures/motivation_what_k_does.png)
 
 That leaves four candidate default priors. Three form one family with
 $R^2 \sim$ Beta($a$, 1), each flat on one quantity for every $k$: **joint flat
 partial r** (what random matrices give; $a = k/2$), **flat R** and **flat R-squared**
 (the total held fixed, so each partial correlation narrows as $k$ grows). The
 fourth is **independent flat partial r**.
-
-Each prior keeps one quantity flat whatever $k$ is; the figure shows what the
-other one does as predictors are added:
-
-![What each of the four priors keeps flat as predictors are added](https://raw.githubusercontent.com/dm-k1/flatcor-paper/main/docs/figures/four_priors_what_stays_flat.png)
 
 ## Three repositories
 
